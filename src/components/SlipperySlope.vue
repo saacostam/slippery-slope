@@ -130,7 +130,7 @@ export default{
 <style scoped>
 @font-face {
 font-family: pixelFont;
-src: url('@/../fonts/slippery-slope/FreePixel.ttf');
+src: url('/fonts/slippery-slope/FreePixel.ttf');
 }
 #canvas-wrapper{
   position: relative;
