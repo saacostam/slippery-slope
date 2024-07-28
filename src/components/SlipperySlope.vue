@@ -1,6 +1,5 @@
 <template>
-  <div id="platformer">
-      <h3 class="text-white text-center mb-4 h3">🏔️ Slippery Slope 🐧</h3>
+  <div id="platformer" class="position-relative">
       <div id="canvas-wrapper">
           <button class="btn btn-danger nav-button" @click="gameOver" v-show="!this.game.gameOver"><i class="bi bi-house-fill"></i></button>
           <div id="canvas-instruction" v-if="this.instruction" v-show="!this.game.gameOver">
@@ -24,17 +23,7 @@
               <div class="menu-instruction text-white" v-if="this.currentLevel[0] < 8">Choose a <span class="text-primary">level</span>!</div>
               <div class="menu-instruction text-white" v-else><span class="text-success">Congratulations!</span></div>
           </div>
-      </div>
-
-      <div class="instructions mt-3 text-white">
-          <h3 class="text-center h5">How to Play</h3>
-          <ul id="ul-instructions">
-              <li><span class="text-primary">Move</span> and <span class="text-primary">Jump</span> with the <span class="text-primary">keyboards arrows</span>.</li>
-              <li>Use <span class="text-primary">R</span> key to <span class="text-primary">restart</span> the level.</li>
-              <li>Go to the <span class="text-primary">Flag</span>.</li>
-              <li>The <span class="text-primary">red keys eliminate</span> the <span class="text-primary">bricks</span></li>
-          </ul>
-      </div>
+        </div>
   </div>
 </template>
 
@@ -154,12 +143,12 @@ src: url('/fonts/slippery-slope/FreePixel.ttf');
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
   background-color: var(--black);
   font-family: pixelFont;
 
-  height: calc(100vh - 4rem);
   overflow: auto;
+  width: fit-content;
+  margin: 1rem auto;
 
   user-select: none;
 }
@@ -256,9 +245,6 @@ src: url('/fonts/slippery-slope/FreePixel.ttf');
   padding-right: 2rem;
 }
 @media (max-width: 950px) {
-  #ui-wrapper, #canvas, .instructions{
-      width: 30rem;
-  }
   .menu-instruction{
       bottom: 0.6rem;
   }
@@ -272,9 +258,6 @@ src: url('/fonts/slippery-slope/FreePixel.ttf');
   }
 }
 @media (max-width: 600px) {
-  #ui-wrapper, #canvas, .instructions{
-      width: 20rem;
-  }
   .level-button{
       height: 2rem;
       font-size: 1rem;
